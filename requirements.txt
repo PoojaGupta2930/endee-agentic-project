@@ -1,0 +1,8 @@
+streamlit
+requests
+sentence-transformers
+numpy
+fastapi
+uvicorn
+chromadb
+pydantic

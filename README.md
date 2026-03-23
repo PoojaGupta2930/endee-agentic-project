@@ -1,134 +1,73 @@
-\# Endee Agentic RAG Project
+# Endee Agentic RAG Project
 
+[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-App-green.svg)](https://streamlit.io/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
+---
 
-\## Overview
+## Overview
 
+This project implements **Semantic Search, Retrieval-Augmented Generation (RAG), and Agentic AI workflow** using the Endee vector database.  
+It allows users to ask questions and get AI-generated answers enhanced with **vector search context**.
 
+---
 
-This project implements Semantic Search, RAG, and Agentic AI workflow using Endee vector database.
+## Problem
 
+Traditional keyword search **cannot understand the meaning** of queries.  
+We need semantic search using vector embeddings to provide **accurate and context-aware results**.
 
+---
 
-\## Problem
+## Solution
 
-
-
-Keyword search cannot understand meaning.
-
-
-
-We need semantic search using vectors.
-
-
-
-\## Solution
-
-
-
+**Workflow:**  
 User → Agent → Embedding → Endee → Search → Context → LLM → Answer
 
 
+The agent decides the next action:  
 
-\## Tech
+- **Greeting** → reply directly  
+- **Search request** → perform RAG with context  
+- **Otherwise** → default to RAG
 
+---
 
+## Tech Stack
 
-Endee
+- **Endee** – Vector database for embeddings  
+- **Ollama** – LLM generation engine  
+- **Sentence Transformers** – Create vector embeddings  
+- **Streamlit** – Frontend user interface  
+- **FastAPI** – Backend API for vector search  
+- **Docker** – Containerization for easy setup  
 
-Ollama
+---
 
-Sentence Transformers
+## Agentic Workflow
 
-Streamlit
+1. Agent analyzes user input.  
+2. If greeting → reply.  
+3. If search → RAG.  
+4. Else → default to RAG.  
 
-Docker
+---
 
+## Endee Usage
 
+- Store embeddings for documents  
+- Search embeddings for semantic similarity  
+- Return metadata  
+- Used in RAG pipeline to provide context to LLM
 
-\## Agentic Workflow
+---
 
+## Setup Instructions
 
+1. **Clone the repo:**
 
-Agent decides action
-
-
-
-if greeting → reply
-
-
-
-if search → RAG
-
-
-
-else → RAG
-
-
-
-\## Endee Usage
-
-
-
-Store embeddings
-
-
-
-Search embeddings
-
-
-
-Return metadata
-
-
-
-Used in RAG pipeline
-
-
-
-\## Setup
-
-
-
-Fork Endee repo
-
-
-
-Clone repo
-
-
-
-Create project
-
-
-
-Run:
-
-
-
-docker compose up --build
-
-
-
-Pull model:
-
-
-
-ollama pull orca-mini
-
-
-
-Insert data:
-
-
-
-python ingest.py
-
-
-
-Open:
-
-
-
-localhost:8501
+```bash
+git clone https://github.com/PoojaGupta2930/endee-agentic-project.git
+cd endee-agentic-project
 
